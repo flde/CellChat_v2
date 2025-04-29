@@ -2995,6 +2995,11 @@ netVisual_chord_gene <- function(object, slot.name = "net", color.use = NULL,
     link.arr.type = "big.arrow"
   }
   circos.clear()
+
+  # Prevent early plotting start 
+  pdf(NULL)
+  dev.control(displaylist="enable")
+  
   chordDiagram(df.plot,
                order = order.sector,
                col = edge.color,
@@ -3034,6 +3039,11 @@ netVisual_chord_gene <- function(object, slot.name = "net", color.use = NULL,
     text(-0, 1.02, title.name, cex=1)
   }
   gg <- recordPlot()
+
+  
+  # Prevent early plotting end 
+  invisible(dev.off())
+  
   return(gg)
 }
 
