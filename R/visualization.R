@@ -2997,8 +2997,8 @@ netVisual_chord_gene <- function(object, slot.name = "net", color.use = NULL,
   circos.clear()
 
   # Prevent early plotting start 
-  pdf(NULL)
-  dev.control(displaylist="enable")
+  # pdf(NULL)
+  # dev.control(displaylist="enable")
   
   chordDiagram(df.plot,
                order = order.sector,
@@ -3039,26 +3039,13 @@ netVisual_chord_gene <- function(object, slot.name = "net", color.use = NULL,
     text(-0, 1.02, title.name, cex=1)
   }
   gg <- recordPlot()
-
-  print("I am doing cools stuff")
-  circos.clear()
-  circos.par(
-    canvas.xlim = c(-1.2, 1.2),
-    canvas.ylim = c(-1.2, 1.2),
-    start.degree = 90,
-    gap.degree = 4,
-    track.margin = c(0.01, 0.01)
-  )
-
   
   # Prevent early plotting end 
-  invisible(dev.off())
+  # invisible(dev.off())
   
   return(gg)
+  
 }
-
-
-
 
 #' River plot showing the associations of latent patterns with cell groups and ligand-receptor pairs or signaling pathways
 #'
