@@ -3040,6 +3040,16 @@ netVisual_chord_gene <- function(object, slot.name = "net", color.use = NULL,
   }
   gg <- recordPlot()
 
+  print("I am doing cools stuff")
+  circos.clear()
+  circos.par(
+    canvas.xlim = c(-1.2, 1.2),
+    canvas.ylim = c(-1.2, 1.2),
+    start.degree = 90,
+    gap.degree = 4,
+    track.margin = c(0.01, 0.01)
+  )
+
   
   # Prevent early plotting end 
   invisible(dev.off())
