@@ -2994,6 +2994,7 @@ netVisual_chord_gene <- function(object, slot.name = "net", color.use = NULL,
   } else {
     link.arr.type = "big.arrow"
   }
+  
   circos.clear()
 
   # Prevent early plotting start 
@@ -3010,8 +3011,8 @@ netVisual_chord_gene <- function(object, slot.name = "net", color.use = NULL,
                direction.type = c("diffHeight","arrows"),
                link.arr.type = link.arr.type,
                annotationTrack = "grid",
-               annotationTrackHeight = annotationTrackHeight,
-               preAllocateTracks = list(track.height = max(strwidth(order.sector))),
+               annotationTrackHeight = circlize::mm_h(2.5),
+               preAllocateTracks = list(track.height = circlize::mm_h(3)),
                small.gap = small.gap,
                big.gap = big.gap,
                link.visible = link.visible,
